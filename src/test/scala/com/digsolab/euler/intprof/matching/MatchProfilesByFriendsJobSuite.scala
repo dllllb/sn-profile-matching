@@ -20,6 +20,11 @@ class MatchProfilesByFriendsJobSuite extends FunSuite {
       |{"info":{ "id":100000000004371, "name": "Владимир", "secName": "Шеменков"}, "friends":[]}
     """.stripMargin.trim
 
+  val matchSource =
+    s"""
+       |{"_id":"1","info":{"name":"Володя","secName":"Шеменков"},"friends":[{"name":"Ирина","secName":"Гуда"},{"name":"Анна","secName":"Тильняк"},{"name":"Анастасия","secName":"Звягинцева"},{"name":"Лилия","secName":"Заболотная"}]}
+     """.stripMargin.trim
+
   test("mapreduce") {
     val dir = new RAMDirectory()
     FbProfileFriendsIndexBuilder.buildIndex(
@@ -33,7 +38,7 @@ class MatchProfilesByFriendsJobSuite extends FunSuite {
       new MatchProfilesByFriendsReducer
     ).withInput(
       new LongWritable(1),
-      new Text("""{"_id":"1","info":{"name":"Володя","secName":"Шеменков"},"friends":[{"name":"Ирина","secName":"Гуда"},{"name":"Анна","secName":"Тильняк"},{"name":"Анастасия","secName":"Звягинцева"},{"name":"Лилия","secName":"Заболотная"}]}""")
+      new Text(matchSource)
     ).withOutput(
       NullWritable.get(),
       new Text("1\t100000000004370\tvolodya shemenkov\tvladimir shemenkov\t4.0|1\t100000000004371\tvolodya shemenkov\tvladimir shemenkov\t0.0")
