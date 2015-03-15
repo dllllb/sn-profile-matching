@@ -1,8 +1,8 @@
 package com.digsolab.euler.intprof.matching
 
 import com.digsolab.euler.intprof.util.{NameUtils, Romanization}
-import java.io.{Reader, BufferedReader}
-import org.apache.lucene.store.Directory
+import java.io._
+import org.apache.lucene.store.{SimpleFSDirectory, Directory}
 import org.apache.lucene.analysis.core.KeywordAnalyzer
 import org.apache.lucene.analysis.miscellaneous.PerFieldAnalyzerWrapper
 import org.apache.lucene.analysis.Analyzer
@@ -108,5 +108,57 @@ object FbProfileFriendsIndexBuilder {
 
     println(s"total docs processed: $processedDocs")
     println(s"total friends processed: $processedFriends")
+  }
+}
+
+object FbProfileFriendsWallIndexBuilder {
+  import FbProfileFriendsIndexBuilder._
+  def main(args: Array[String]) {
+    val indexLocation = System.getProperty("profile.index.location")
+    val sourceFile = System.getProperty("profile.source.file")
+
+    resource.managed(
+      new BufferedReader(
+        new InputStreamReader(
+          new FileInputStream(sourceFile)
+        )
+      )
+    ).acquireAndGet { reader =>
+      buildIndex(
+        new SimpleFSDirectory(new File(indexLocation)),
+        new BufferedReader(
+          new InputStreamReader(
+            this.getClass.getResourceAsStream("/name-aliases-known-vb-vk-pairs-vk90k.txt")
+          )
+        ),
+        wallFriendsRecordsIt(reader)
+      )
+    }
+  }
+}
+
+object FbProfileFriendsJsonIndexBuilder {
+  import FbProfileFriendsIndexBuilder._
+  def main(args: Array[String]) {
+    val indexLocation = System.getProperty("profile.index.location")
+    val sourceFile = System.getProperty("profile.source.file")
+
+    resource.managed(
+      new BufferedReader(
+        new InputStreamReader(
+          new FileInputStream(sourceFile)
+        )
+      )
+    ).acquireAndGet { reader =>
+      buildIndex(
+        new SimpleFSDirectory(new File(indexLocation)),
+        new BufferedReader(
+          new InputStreamReader(
+            this.getClass.getResourceAsStream("/name-aliases-known-vb-vk-pairs-vk90k.txt")
+          )
+        ),
+        jsonRecordsIt(reader)
+      )
+    }
   }
 }
