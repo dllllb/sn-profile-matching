@@ -53,7 +53,7 @@ profile ID, match candidate ID, profile name, match candidate name, match confid
     1	100000000004370	volodya shemenkov	vladimir shemenkov	2.0
     1	100000000004371	volodya shemenkov	vladimir shemenkov	0.0
 
-`com.digsolab.euler.intprof.matching.MatchProfilesByFriendsJob` Hadoop job for large-scale matching.
+`com.digsolab.euler.intprof.matching.MatchProfilesByFriendsJob` is a Hadoop job for large-scale matching.
 
 Hadoop job execution
 --------------------
