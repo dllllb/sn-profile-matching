@@ -76,3 +76,15 @@ See example file: *data/match-data-sample.jsonl*
 Hadoop job output files are in tab-separated values (TSV) format
 and contain the following fields:
 profile ID, match candidate ID, profile name, match candidate name, match confidence.
+
+Additional data files
+---------------------
+
+*src/main/resources/fb-name-tf-top10k.tsv*: frequency of the most top 10 thousands first names
+calculated on Russian subset of the Facebook profiles
+
+src/main/resources/fb-2name-tf-top10k.tsv: frequency of the most top 10 thousands last names
+calculated on Russian subset of the Facebook profiles
+
+src/main/resources/name-aliases-known-vb-vk-pairs-vk90k.txt: alternative spellings of russian names
+calculated from 90 thousands Vkontakte profiles with links to Facebook profiles
