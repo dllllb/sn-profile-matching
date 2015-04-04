@@ -23,7 +23,7 @@ Instructions to build and execute sample code
 Executables
 -----------
 
-`com.digsolab.euler.intprof.matching.FbProfileFriendsJsonIndexBuilder` a tool to create Lucene index for user profiles,
+`com.digsolab.euler.intprof.matching.FbProfileFriendsJsonIndexBuilder` is a tool to create Lucene index for user profiles,
 which is required to perform matching.
 
 **Parameters:**
@@ -34,7 +34,7 @@ which is required to perform matching.
 Input file should contain user first / last name and user friends first last names in JSON format.
 See example file: *data/index-data-sample.jsonl*.
 
-`com.digsolab.euler.intprof.matching.MatchProfileByFriendsTool` profile matching tool.
+`com.digsolab.euler.intprof.matching.MatchProfileByFriendsTool` is a profile matching tool.
 
 **Parameters:**
 
