@@ -1,9 +1,9 @@
-package com.digsolab.euler.intprof.matching
+package com.digsolab.papers.matching
 
+import com.digsolab.papers.util.TermFrequences
 import org.apache.lucene.index.{Term, MultiFields, IndexReader}
 import org.apache.lucene.search.spell.StringDistance
 import org.apache.lucene.search.{BooleanClause, BooleanQuery, FuzzyQuery, IndexSearcher}
-import com.digsolab.euler.intprof.util.TermFrequences
 
 trait ActionLogger {
   def logAction(action: => String)

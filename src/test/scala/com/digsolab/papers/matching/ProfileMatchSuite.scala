@@ -1,4 +1,4 @@
-package com.digsolab.euler.intprof.matching
+package com.digsolab.papers.matching
 
 import java.io.{BufferedReader, StringReader}
 

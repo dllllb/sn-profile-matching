@@ -1,6 +1,6 @@
-package com.digsolab.euler.intprof.matching
+package com.digsolab.papers.matching
 
-import com.digsolab.euler.intprof.util.{NameUtils, Jackson, Romanization}
+import com.digsolab.papers.util.{NameUtils, Romanization, Jackson}
 
 case class ProfileName(name: String, secName: String) {
   override def toString = s"$name $secName"

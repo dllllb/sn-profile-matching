@@ -1,4 +1,4 @@
-package com.digsolab.euler.intprof.util
+package com.digsolab.papers.util
 
 import org.apache.hadoop.mapreduce.Mapper
 import org.slf4j.LoggerFactory

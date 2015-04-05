@@ -1,4 +1,4 @@
-package com.digsolab.euler.intprof.util
+package com.digsolab.papers.util
 
 import org.apache.hadoop.util.{ToolRunner, Tool}
 import org.apache.hadoop.conf.{Configuration, Configured}

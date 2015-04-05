@@ -1,7 +1,7 @@
-package com.digsolab.euler.intprof.matching
+package com.digsolab.papers.matching
 
-import com.digsolab.euler.intprof.util.{NameUtils, Romanization}
 import java.io._
+import com.digsolab.papers.util.{Romanization, NameUtils}
 import org.apache.lucene.store.{SimpleFSDirectory, Directory}
 import org.apache.lucene.analysis.core.KeywordAnalyzer
 import org.apache.lucene.analysis.miscellaneous.PerFieldAnalyzerWrapper

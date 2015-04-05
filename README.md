@@ -13,17 +13,17 @@ Instructions to build and execute sample code
     java -cp target/sn-profile-matching.jar \
       -Dprofile.index.location=test-index \
       -Dprofile.source.file=data/index-data-sample.jsonl \
-      com.digsolab.euler.intprof.matching.FbProfileFriendsJsonIndexBuilder
+      com.digsolab.papers.matching.FbProfileFriendsJsonIndexBuilder
 
     java -cp target/sn-profile-matching.jar \
       -Dprofile.friends.index=test-index \
       -Dprofile.friends.list=data/match-data-sample.jsonl \
-      com.digsolab.euler.intprof.matching.MatchProfileByFriendsTool
+      com.digsolab.papers.matching.MatchProfileByFriendsTool
 
 Executables
 -----------
 
-`com.digsolab.euler.intprof.matching.FbProfileFriendsJsonIndexBuilder` is a tool to create Lucene index for user profiles,
+`com.digsolab.papers.matching.FbProfileFriendsJsonIndexBuilder` is a tool to create Lucene index for user profiles,
 which is required to perform matching.
 
 **Parameters:**
@@ -34,7 +34,7 @@ which is required to perform matching.
 Input file should contain user first / last name and user friends first last names in JSON format.
 See example file: *data/index-data-sample.jsonl*.
 
-`com.digsolab.euler.intprof.matching.MatchProfileByFriendsTool` is a profile matching tool.
+`com.digsolab.papers.matching.MatchProfileByFriendsTool` is a profile matching tool.
 
 **Parameters:**
 
@@ -53,13 +53,13 @@ profile ID, match candidate ID, profile name, match candidate name, match confid
     1	100000000004370	volodya shemenkov	vladimir shemenkov	2.0
     1	100000000004371	volodya shemenkov	vladimir shemenkov	0.0
 
-`com.digsolab.euler.intprof.matching.MatchProfilesByFriendsJob` is a Hadoop job for large-scale matching.
+`com.digsolab.papers.matching.MatchProfilesByFriendsJob` is a Hadoop job for large-scale matching.
 
 Hadoop job execution
 --------------------
 
     hadoop jar $ASSEMBLY_JAR_PATH \
-      com.digsolab.euler.intprof.matching.MatchProfilesByFriendsJob \
+      com.digsolab.papers.matching.MatchProfilesByFriendsJob \
       -Dmapreduce.user.classpath.first=true \
       -Dmapred.input.dir=$INPUT_PROFILES_JSONL_FILES_WILDCARD \
       -Dmapred.cache.archives=$ARCHIVED_INDEX_FILES \

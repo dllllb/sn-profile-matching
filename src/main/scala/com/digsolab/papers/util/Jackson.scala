@@ -1,4 +1,4 @@
-package com.digsolab.euler.intprof.util
+package com.digsolab.papers.util
 
 import com.fasterxml.jackson.databind.{SerializationFeature, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule

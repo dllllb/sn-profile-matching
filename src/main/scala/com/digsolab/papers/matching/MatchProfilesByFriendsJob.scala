@@ -1,9 +1,9 @@
-package com.digsolab.euler.intprof.matching
+package com.digsolab.papers.matching
 
 import java.io.{DataInput, DataOutput, File}
 import java.lang.Iterable
 
-import com.digsolab.euler.intprof.util.{RichMapper, RichReducer, TypedJob}
+import com.digsolab.papers.util.{TypedJob, RichReducer, RichMapper}
 import org.apache.hadoop.io.{LongWritable, NullWritable, Text, Writable}
 import org.apache.hadoop.util.StringUtils
 import org.apache.lucene.index._

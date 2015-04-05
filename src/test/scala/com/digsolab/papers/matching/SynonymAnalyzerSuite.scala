@@ -1,10 +1,9 @@
-package com.digsolab.euler.intprof.matching
+package com.digsolab.papers.matching
 
+import com.digsolab.papers.util.Romanization
 import org.scalatest.FunSuite
 import java.io._
-import org.apache.lucene.util.Version
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute
-import com.digsolab.euler.intprof.util.Romanization
 
 class SynonymAnalyzerSuite extends FunSuite {
   test("analyze") {

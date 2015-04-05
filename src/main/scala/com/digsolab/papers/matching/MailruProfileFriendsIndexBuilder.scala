@@ -1,7 +1,7 @@
-package com.digsolab.euler.intprof.matching
+package com.digsolab.papers.matching
 
-import com.digsolab.euler.intprof.util.{NameUtils, Romanization}
 import java.io.{Reader, BufferedReader}
+import com.digsolab.papers.util.{Romanization, NameUtils}
 import org.apache.lucene.store.Directory
 import org.apache.lucene.analysis.core.KeywordAnalyzer
 import org.apache.lucene.analysis.miscellaneous.PerFieldAnalyzerWrapper
@@ -11,7 +11,6 @@ import org.apache.lucene.util.Version
 import org.apache.lucene.index.IndexWriterConfig.OpenMode
 import org.apache.lucene.document._
 import org.apache.lucene.index.FieldInfo.IndexOptions
-import scala.Some
 import scala.collection.mutable.ArrayBuffer
 import scala.collection.JavaConverters._
 

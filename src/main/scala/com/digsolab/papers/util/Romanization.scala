@@ -1,4 +1,4 @@
-package com.digsolab.euler.intprof.util
+package com.digsolab.papers.util
 
 import com.ibm.icu.text.Transliterator
 
