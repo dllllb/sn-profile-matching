@@ -98,6 +98,8 @@ Samples of real data from FB and VK social networks are also provided. Here are 
 - 21124 Vkontakte profiles with their friends names ([Download](http://public-datasets.s3.amazonaws.com/sn-profile-matching-hse/vk-friend-names-hse.txt.gz))
 - 577 linked profiles that exist in the previous two datasets ([Download](http://public-datasets.s3.amazonaws.com/sn-profile-matching-hse/vk-fb-matches-hse.csv.gz))
 
+Mirror of sample data files: http://panchenko.me/data/matching/
+
 ### How to execute profile matching on sample data:
 
     mvn package
