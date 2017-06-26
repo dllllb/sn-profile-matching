@@ -94,22 +94,24 @@ Sample data from real social networks
 
 Samples of real data from FB and VK social networks are also provided. Here are the links:
 
-- 4429 Facebook profiles with their friends names ([Download](http://public-datasets.s3.amazonaws.com/sn-profile-matching-hse/fb-friend-names-hse.txt.gz))
-- 21124 Vkontakte profiles with their friends names ([Download](http://public-datasets.s3.amazonaws.com/sn-profile-matching-hse/vk-friend-names-hse.txt.gz))
-- 577 linked profiles that exist in the previous two datasets ([Download](http://public-datasets.s3.amazonaws.com/sn-profile-matching-hse/vk-fb-matches-hse.csv.gz))
+- 4429 Facebook profiles with their friends names ([Download](https://storage.googleapis.com/di-datasets/sn-profile-matching-hse/fb-friend-names-hse.txt.gz))
+- 21124 Vkontakte profiles with their friends names ([Download](https://storage.googleapis.com/di-datasets/sn-profile-matching-hse/vk-friend-names-hse.txt.gz))
+- 577 linked profiles that exist in the previous two datasets ([Download](https://storage.googleapis.com/di-datasets/sn-profile-matching-hse/vk-fb-matches-hse.csv.gz))
 
 Mirror of sample data files: http://panchenko.me/data/matching/
 
 ### How to execute profile matching on sample data:
 
-    mvn package
+```sh
+mvn package
 
-    java -cp target/sn-profile-matching.jar \
-          -Dprofile.index.location=test-index \
-          -Dprofile.source.file=fb-friend-names-hse.txt \
-          com.digsolab.papers.matching.FbProfileFriendsWallIndexBuilder
+java -cp target/sn-profile-matching.jar \
+      -Dprofile.index.location=test-index \
+      -Dprofile.source.file=fb-friend-names-hse.txt \
+      com.digsolab.papers.matching.FbProfileFriendsWallIndexBuilder
 
-    java -cp target/sn-profile-matching.jar \
-          -Dprofile.friends.index=hse-index \
-          -Dprofile.friends.list=vk-friend-names-hse.txt \
-          com.digsolab.papers.matching.MatchProfileByFriendsTool
+java -cp target/sn-profile-matching.jar \
+      -Dprofile.friends.index=hse-index \
+      -Dprofile.friends.list=vk-friend-names-hse.txt \
+      com.digsolab.papers.matching.MatchProfileByFriendsTool
+```
