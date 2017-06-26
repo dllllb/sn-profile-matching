@@ -8,17 +8,19 @@ It is based on work made in [Digital Society Laboratory](http://digsolab.com).
 Instructions to build and execute sample code
 ---------------------------------------------
 
-    mvn package
+```sh
+mvn package
 
-    java -cp target/sn-profile-matching.jar \
-      -Dprofile.index.location=test-index \
-      -Dprofile.source.file=data/index-data-sample.jsonl \
-      com.digsolab.papers.matching.FbProfileFriendsJsonIndexBuilder
+java -cp target/sn-profile-matching.jar \
+  -Dprofile.index.location=test-index \
+  -Dprofile.source.file=data/index-data-sample.jsonl \
+  com.digsolab.papers.matching.FbProfileFriendsJsonIndexBuilder
 
-    java -cp target/sn-profile-matching.jar \
-      -Dprofile.friends.index=test-index \
-      -Dprofile.friends.list=data/match-data-sample.jsonl \
-      com.digsolab.papers.matching.MatchProfileByFriendsTool
+java -cp target/sn-profile-matching.jar \
+  -Dprofile.friends.index=test-index \
+  -Dprofile.friends.list=data/match-data-sample.jsonl \
+  com.digsolab.papers.matching.MatchProfileByFriendsTool
+```
 
 Executables
 -----------
@@ -50,20 +52,24 @@ profile ID, match candidate ID, profile name, match candidate name, match confid
 
 **Sample output:**
 
-    1	100000000004370	volodya shemenkov	vladimir shemenkov	2.0
-    1	100000000004371	volodya shemenkov	vladimir shemenkov	0.0
+```
+1	100000000004370	volodya shemenkov	vladimir shemenkov	2.0
+1	100000000004371	volodya shemenkov	vladimir shemenkov	0.0
+```
 
 `com.digsolab.papers.matching.MatchProfilesByFriendsJob` is a Hadoop job for large-scale matching.
 
 Hadoop job execution
 --------------------
 
-    hadoop jar $ASSEMBLY_JAR_PATH \
-      com.digsolab.papers.matching.MatchProfilesByFriendsJob \
-      -Dmapreduce.user.classpath.first=true \
-      -Dmapred.input.dir=$INPUT_PROFILES_JSONL_FILES_WILDCARD \
-      -Dmapred.cache.archives=$ARCHIVED_INDEX_FILES \
-      -Dmapred.output.dir=$OUTPUT_PATH
+```sh
+hadoop jar $ASSEMBLY_JAR_PATH \
+  com.digsolab.papers.matching.MatchProfilesByFriendsJob \
+  -Dmapreduce.user.classpath.first=true \
+  -Dmapred.input.dir=$INPUT_PROFILES_JSONL_FILES_WILDCARD \
+  -Dmapred.cache.archives=$ARCHIVED_INDEX_FILES \
+  -Dmapred.output.dir=$OUTPUT_PATH
+```
 
 - ASSEMBLY_JAR_PATH: local filesystem path to assembly jar produced by `mvn package` command.
 - INPUT_PROFILES_JSONL_FILES_WILDCARD: a HDFS path to input profiles JSONL files, may contain wildcard symbols.
