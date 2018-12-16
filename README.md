@@ -1,11 +1,11 @@
-Social network profile matching code sample
+Large-Scale Parallel Matching of Social Network Profiles
 ===========================================
 
-This project is a companion of the research paper on [ Large-Scale Parallel Matching of Social Network Profiles](paper.pdf). 
+This project is a companion of the research paper on [ Large-Scale Parallel Matching of Social Network Profiles](https://link.springer.com/chapter/10.1007/978-3-319-26123-2_27), [PDF](paper.pdf).
 A profile matching algorithm takes as input a user profile of one social network and returns, if existing, the profile of the same person in another social network. Such methods have immediate applications in Internet marketing, search, security, and a number of other domains, which is why this topic saw a recent surge in popularity.
 In this paper, we present a user identity resolution approach that uses minimal supervision and achieves a precision of 0.98 at a recall of 0.54. Furthermore, the method is computationally efficient and easily paral- lelizable. We show that the method can be used to match Facebook, the most popular social network globally, with VKontakte, the most popular social network among Russian-speaking users.
 
-If you use this code please cite it as following:
+If you use this code  please cite it as following:
 
 ```
 
