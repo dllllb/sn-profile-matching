@@ -112,11 +112,13 @@ calculated from 90 thousands Vkontakte profiles with links to Facebook profiles
 Sample data from real social networks
 -------------------------------------
 
-Samples of real data from FB and VK social networks are also provided. Here are the links:
+Samples of real data from FB and VK social networks are also provided:
 
-- 4429 Facebook profiles with their friends names ([Download](https://storage.googleapis.com/di-datasets/sn-profile-matching-hse/fb-friend-names-hse.txt.gz))
-- 21124 Vkontakte profiles with their friends names ([Download](https://storage.googleapis.com/di-datasets/sn-profile-matching-hse/vk-friend-names-hse.txt.gz))
-- 577 linked profiles that exist in the previous two datasets ([Download](https://storage.googleapis.com/di-datasets/sn-profile-matching-hse/vk-fb-matches-hse.csv.gz))
+- 4429 Facebook profiles with their friends names
+- 21124 Vkontakte profiles with their friends names
+- 577 linked profiles that exist in the previous two datasets
+
+Here are the [donwnload link](https://storage.googleapis.com/di-datasets/sn-profile-matching.zip).
 
 Mirror of sample data files: http://panchenko.me/data/matching/
 
