@@ -3,3 +3,6 @@ target
 *.iml
 test-index
 .DS_Store
+.classpath
+.project
+.settings
