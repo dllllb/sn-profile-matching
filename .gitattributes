@@ -1,0 +1,2 @@
+data/fb-friend-names-hse.txt.gz filter=lfs diff=lfs merge=lfs -text
+data/vk-friend-names-hse.txt.gz filter=lfs diff=lfs merge=lfs -text
